@@ -1,135 +1,146 @@
-:root{
-    --rozmiar: 25vh;
-    --przesuniecie: 40vh;
-    --gra:100vh;
-    --white: white; /*whitesmoke*/
-    --green: green;
-    --orange:rgb(253, 101, 0);
-    --yellow: yellow;
-    --blue: blue;
-    --red: red;
-    --black: black;
-    --skala: .95;
-    font-size: 20vh;
+:root {
+  --rozmiar: 25vh;
+  --przesuniecie: 40vh;
+  --gra: 100vh;
+  --white: white; /*whitesmoke*/
+  --green: green;
+  --orange: rgb(253, 101, 0);
+  --yellow: yellow;
+  --blue: blue;
+  --red: red;
+  --black: black;
+  --skala: 0.95;
+  font-size: 20vh;
 }
-body{
-    background-image: url(img/congruent_outline.png);
-    overflow: hidden;
-
+body {
+  background-image: url(img/congruent_outline.png);
+  overflow: hidden;
 }
-#pudelko{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#pudelko {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#gra{
-    max-width: var(--gra);
-    max-height: var(--gra);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#gra {
+  max-width: var(--gra);
+  max-height: var(--gra);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.guzik{
-    overflow: hidden;
-    display: block;
-    position: absolute;
-    width: var(--rozmiar);
-    height: var(--rozmiar);
-    text-align: center;
-    line-height: var(--rozmiar);
-    border-radius: 100%;
-    border: 2px black solid;
-    background-color: #AAA;
-    background-image: radial-gradient(
-    hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 0%, 0.1),
-    hsla(0, 0%, 100%, 0.2), hsla(0, 0%, 100%, 0.1)
+.guzik {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  width: var(--rozmiar);
+  height: var(--rozmiar);
+  text-align: center;
+  line-height: var(--rozmiar);
+  border-radius: 100%;
+  border: 2px black solid;
+  background-color: #aaa;
+  background-image: radial-gradient(
+    hsla(0, 0%, 0%, 0.2),
+    hsla(0, 0%, 0%, 0.1),
+    hsla(0, 0%, 100%, 0.2),
+    hsla(0, 0%, 100%, 0.1)
   );
-    color: black;
-    text-shadow:
-    0 0 15px hsla(0, 0%, 100%, 1),
-    0 2px 4px hsla(0, 0%, 0%, 0.7);
-    box-shadow:
-    inset 0 -5px 20px hsla(0, 0%, 0%, 0.4),
-    inset 0 5px 20px hsla(0, 0%, 100%, 0.4),
-    -8px 8px 5px hsla(0, 0%, 0%, 0.15), 
+  color: black;
+  text-shadow: 0 0 15px hsla(0, 0%, 100%, 1), 0 2px 4px hsla(0, 0%, 0%, 0.7);
+  box-shadow: inset 0 -5px 20px hsla(0, 0%, 0%, 0.4),
+    inset 0 5px 20px hsla(0, 0%, 100%, 0.4), -8px 8px 5px hsla(0, 0%, 0%, 0.15),
     5px 18px 10px hsla(0, 0%, 0%, 0.2);
-    user-select: none;
-    transition: all .2s linear;
+  user-select: none;
+  transition: all 0.2s linear;
 }
 
-#pytanie{
-    overflow: hidden;
-    font-size: 0.4rem;
-    width: var(--przesuniecie);
-    border-radius: 0%;
-    color: white;
-    background-color: black;
-    text-shadow: none;
-    border-radius: 50%;
+#pytanie {
+  overflow: hidden;
+  font-size: 0.4rem;
+  width: var(--przesuniecie);
+  border-radius: 0%;
+  color: white;
+  background-color: black;
+  text-shadow: none;
+  border-radius: 50%;
+  /* transition: 3s; */
 }
-#pytanie:hover{
-    cursor: pointer;
-    /* transform: scale(var(--skala)); */
+#pytanie:hover {
+  cursor: pointer;
+  /* transform: scale(var(--skala)); */
 }
-
-div[id="1"] { 
-    color: black;
-    background-color: var(--white);
-    transform: translate(var(--przesuniecie)); 
+#pytanie.malej {
+  animation: malej 3s; /*tu  trzeba zaciagnac zmienna js */
 }
-div[id="1"]:hover{
-    cursor: pointer;
-    transform: translate(var(--przesuniecie)) scale(var(--skala)); 
+div[id="1"] {
+  color: black;
+  background-color: var(--white);
+  transform: translate(var(--przesuniecie));
 }
-div[id="2"]{
-    background-color: var(--green);
-    transform: rotate(60deg) translate(var(--przesuniecie)) rotate(-60deg); 
-    }
-div[id="2"]:hover{
-    cursor: pointer;
-    transform: rotate(60deg) translate(var(--przesuniecie)) rotate(-60deg) scale(var(--skala)); 
+div[id="1"]:hover {
+  cursor: pointer;
+  transform: translate(var(--przesuniecie)) scale(var(--skala));
 }
-div[id="3"]{
-    background-color: var(--orange);
-    transform: rotate(120deg) translate(var(--przesuniecie)) rotate(-120deg); 
-    }
-div[id="3"]:hover{
-    cursor: pointer;
-    transform: rotate(120deg) translate(var(--przesuniecie)) rotate(-120deg) scale(var(--skala)); 
+div[id="2"] {
+  background-color: var(--green);
+  transform: rotate(60deg) translate(var(--przesuniecie)) rotate(-60deg);
+}
+div[id="2"]:hover {
+  cursor: pointer;
+  transform: rotate(60deg) translate(var(--przesuniecie)) rotate(-60deg)
+    scale(var(--skala));
+}
+div[id="3"] {
+  background-color: var(--orange);
+  transform: rotate(120deg) translate(var(--przesuniecie)) rotate(-120deg);
+}
+div[id="3"]:hover {
+  cursor: pointer;
+  transform: rotate(120deg) translate(var(--przesuniecie)) rotate(-120deg)
+    scale(var(--skala));
 }
 div[id="4"] {
-    background-color: var(--yellow);
-    transform: translate(calc(-1*var(--przesuniecie)));
-    }
-div[id="4"]:hover{
-    cursor: pointer;
-    transform: translate(calc(-1*var(--przesuniecie))) scale(var(--skala));
+  background-color: var(--yellow);
+  transform: translate(calc(-1 * var(--przesuniecie)));
 }
-div[id="5"] { 
-    background-color:  var(--blue);
-    transform: rotate(240deg) translate(var(--przesuniecie)) rotate(-240deg);
- }
- div[id="5"]:hover{
-      cursor: pointer;
-      transform: rotate(240deg) translate(var(--przesuniecie)) rotate(-240deg) scale(var(--skala));
-    }
-div[id="6"]{
-    background-color: var(--red);
-    transform: rotate(300deg) translate(var(--przesuniecie)) rotate(-300deg);
+div[id="4"]:hover {
+  cursor: pointer;
+  transform: translate(calc(-1 * var(--przesuniecie))) scale(var(--skala));
 }
-div[id="6"]:hover{
-      cursor: pointer;
-      transform: rotate(300deg) translate(var(--przesuniecie)) rotate(-300deg) scale(var(--skala));
-    }
+div[id="5"] {
+  background-color: var(--blue);
+  transform: rotate(240deg) translate(var(--przesuniecie)) rotate(-240deg);
+}
+div[id="5"]:hover {
+  cursor: pointer;
+  transform: rotate(240deg) translate(var(--przesuniecie)) rotate(-240deg)
+    scale(var(--skala));
+}
+div[id="6"] {
+  background-color: var(--red);
+  transform: rotate(300deg) translate(var(--przesuniecie)) rotate(-300deg);
+}
+div[id="6"]:hover {
+  cursor: pointer;
+  transform: rotate(300deg) translate(var(--przesuniecie)) rotate(-300deg)
+    scale(var(--skala));
+}
+@keyframes malej {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+  }
+}
 
-@media screen and (orientation: portrait){
-    :root{
+@media screen and (orientation: portrait) {
+  :root {
     font-size: 20vw;
     --rozmiar: 25vw;
     --przesuniecie: 35vw;
-    --gra:100vw;
-}
-    
+    --gra: 100vw;
+  }
 }
