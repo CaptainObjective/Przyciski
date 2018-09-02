@@ -10,7 +10,7 @@ class Kolorki {
         this.tekst = `<span style="color: var(--green)">Zielony</span>`;
         break;
       case 3:
-        this.tekst = `<span style="font-size: 0.5em; color: var(--orange)">Pomarańczowy<span>`;
+        this.tekst = `<span style="color: var(--orange); font-size: 0.8em">Pomarańczowy<span>`;
         break;
       case 4:
         this.tekst = `<span style="color: var(--yellow)">Żółty</span>`;

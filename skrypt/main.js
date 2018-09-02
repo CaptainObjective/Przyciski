@@ -1,14 +1,14 @@
 let nrpytania;
 let historia;
 let level;
-const dom = new Dom();
+// const dom = new Dom();
+let dom;
 const losuj = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 const start = () => {
   console.log("Rozpoczęcie gry");
-  dom.id[0].innerHTML = "Start";
   nrpytania = 0;
   historia = [];
   level = 3;
@@ -16,9 +16,8 @@ const start = () => {
   generujPytanie();
 };
 const poczatek = () => {
-  dom.id[0].innerHTML = "Start";
-  // new Popup("start");
-  dom.id[0].addEventListener("click", start);
-  // dom.id[0].addEventListener("click", start);
+  new Popup("start");
+  // console.log(dom.id[0]);
+  // setTimout(() => dom.id[0].addEventListener("click", start), 1000);
 };
 window.onload = poczatek;

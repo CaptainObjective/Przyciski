@@ -17,16 +17,16 @@ const generujPytanie = () => {
     });
     if (!e) {
       console.log(historia);
-      alert("Koniec czasu\nTwój wynik: " + nrpytania);
-      poczatek();
+      new Popup("czas");
     } else if (e.target.id == pytanie.poprawna) {
       // console.log('dobrze');
       nrpytania++;
       generujPytanie();
     } else {
       console.log(historia);
-      alert("Nie do końca dobrze\nTwój wynik: " + nrpytania);
-      poczatek();
+      new Popup("pomyłka");
+      // alert("Nie do końca dobrze\nTwój wynik: " + nrpytania);
+      // poczatek();
     }
     clearTimeout(timer);
   };
