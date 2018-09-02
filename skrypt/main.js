@@ -8,14 +8,17 @@ const losuj = (min, max) => {
 
 const start = () => {
   console.log("Rozpoczęcie gry");
+  dom.id[0].innerHTML = "Start";
+  nrpytania = 0;
+  historia = [];
+  level = 3;
   dom.id[0].removeEventListener("click", start);
   generujPytanie();
 };
 const poczatek = () => {
   dom.id[0].innerHTML = "Start";
-  nrpytania = 0;
-  historia = [];
-  level = 3;
+  // new Popup("start");
   dom.id[0].addEventListener("click", start);
+  // dom.id[0].addEventListener("click", start);
 };
 window.onload = poczatek;

@@ -4,7 +4,7 @@ const losujPytanie = () => {
   let kategoria = losuj(0, liczba_kategorii); // + trudnosc;
   kategoria > liczba_kategorii ? (kategoria = liczba_kategorii) : false; //TO jeszcze może trzeba będzię poprawić
   //   console.log (kategoria,trudnosc);
-  //   kategoria = 2;
+    // kategoria = 1;
 
   switch (kategoria) {
     case 0:

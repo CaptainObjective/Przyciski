@@ -14,7 +14,7 @@ class Mata {
   mnozenie(wynik) {
     let podzielne = [];
     wynik % 2 == 0 ? (podzielne[0] = 0.5) : false;
-    wynik % 4 == 0 ? (podzielne[2] = 0.25) : false;
+    // wynik % 4 == 0 ? (podzielne[2] = 0.25) : false; tu cos wywala nanXundef
     for (let i = 1; i < 13; i++) {
       if (wynik % i == 0) {
         podzielne.push(i);
@@ -35,10 +35,10 @@ class Mata {
   }
   constructor() {
     this.poprawna = losuj(1, 6);
-    // this.poprawna = 3;
+    // this.poprawna = 4;
 
     let dzialanie = losuj(0, 4);
-    //  dzialanie = 4;
+    // dzialanie = 2;
     switch (dzialanie) {
       case 0:
         this.tekst = this.dodawanie(this.poprawna);
