@@ -1,13 +1,15 @@
 class Popup {
   tekst() {
     if (this.rodzaj == "start") {
-      return "<h1>Witaj w grze w Przyciski</h1><p>Zasady są proste, naciskasz przycisk wskazany przez czarne pole, za każdym razem masz 3 sekudy na odpowiedź, ale uważaj poziom trudności zagadek rośnie. Powodzenia!</p>";
+      return "<h1>Witaj w grze w Przyciski</h1><p>Zasady są proste, naciskasz przycisk wskazany przez czarne pole, uważaj poziom trudności wzrasta. Powodzenia!</p>";
     } else if (this.rodzaj == "pomyłka") {
       this.guzik = "Jeszcze raz!";
-      return `<h1>Koniec gry</h1><p>Twój wynik to: ${nrpytania}</br>Spróbuj jeszcze raz</p>`;
+      return `<h1>Koniec gry</h1><p>Pomyłka! Prawidłowa odpowiedź to: ${
+        historia[historia.length - 1].poprawna
+      }</br>Twój wynik to: ${nrpytania}</br>Spróbuj jeszcze raz</>`;
     } else if (this.rodzaj == "czas") {
       this.guzik = "Jeszcze raz!";
-      return `<h1>Koniec gry</h1><p>Twój wynik to: ${nrpytania}</br>Spróbuj jeszcze raz</p>`;
+      return `<h1>Koniec gry</h1><p>Koniec Czasu!</br>Twój wynik to: ${nrpytania}</br>Spróbuj jeszcze raz</p>`;
     }
   }
   klik() {

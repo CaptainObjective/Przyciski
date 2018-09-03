@@ -12,13 +12,14 @@ const generujPytanie = () => {
     historia.push({
       pytanie: pytanie.tekst,
       klikniete: e ? e.target.id : "nic",
-      poprawna: pytanie.poprawna,
+      poprawna:
+        pytanie.poprawna != "pytanie" ? pytanie.poprawna : "czarny przycisk",
       czas: czas
     });
     if (!e) {
       console.log(historia);
       new Popup("czas");
-    } else if (e.target.id == pytanie.poprawna) {
+    } else if (e.currentTarget.id == pytanie.poprawna) {
       // console.log('dobrze');
       nrpytania++;
       generujPytanie();
@@ -37,6 +38,12 @@ const generujPytanie = () => {
   }
   dom.id[0].classList.add("malej");
   void dom.id[0].offsetWidth;
-  const timer = setTimeout(sprawdz, level * 1000);
+  if (nrpytania % 5 == 0 && nrpytania < 50) {
+    level -= 100;
+    document
+      .querySelector("#pytanie.malej")
+      .style.setProperty("--level", level + "ms");
+  }
+  const timer = setTimeout(sprawdz, level);
   let t0 = performance.now();
 };

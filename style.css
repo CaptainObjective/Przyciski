@@ -12,6 +12,7 @@
   --skala: 0.95;
   --cyferki: 20vh;
   font-size: 2.8vw;
+  --level: 3000ms;
 }
 body {
   background-image: url(img/congruent_outline.png);
@@ -77,7 +78,7 @@ body {
   /* transform: scale(var(--skala)); */
 }
 #pytanie.malej {
-  animation: malej 3s; /*tu  trzeba zaciagnac zmienna js */
+  animation: ease-in malej var(--level); /*tu  trzeba zaciagnac zmienna js */
 }
 div[id="1"] {
   color: black;
@@ -148,6 +149,7 @@ div[id="6"]:hover {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  animation: pojawianie 1s linear;
 }
 #tekst {
   overflow: hidden;
@@ -208,7 +210,15 @@ p {
     transform: scale(1);
   }
   to {
-    transform: scale(0.4);
+    transform: scale(0);
+  }
+}
+@keyframes pojawianie {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
 
@@ -218,6 +228,9 @@ p {
     --rozmiar: 25vw;
     --przesuniecie: 35vw;
     --gra: 100vw;
-    font-size: 4vw;
+    font-size: 3vh;
+  }
+  #popup {
+    height: 50%;
   }
 }

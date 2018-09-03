@@ -11,7 +11,7 @@ const start = () => {
   console.log("Rozpoczęcie gry");
   nrpytania = 0;
   historia = [];
-  level = 3;
+  level = 2000;
   dom.id[0].removeEventListener("click", start);
   generujPytanie();
 };
